@@ -8,15 +8,18 @@ Passwords are print/print
 
 ## Run the server
 
-Start with:
+Start `cupsd` with:
 ```
 sudo docker run -d --restart unless-stopped \
   -p 631:631 \
   --privileged \
   -v /var/run/dbus:/var/run/dbus \
   -v /dev/bus/usb:/dev/bus/usb \
+  -v $(pwd)/printers.conf:/etc/cups/printers.conf \
   unixorn/cupsd
 ```
+
+Mmounting `printers.conf` into the container keeps you from losing your printer configuration when you upgrade the container later.
 
 ## Add printers to server
 
