@@ -8,19 +8,19 @@ RUN apt-get update \
 && update-ca-certificates \
 && apt-get install -y \
   cups \
-  cups-client \
   cups-bsd \
+  cups-client \
   cups-filters \
   foomatic-db-compressed-ppds \
-  printer-driver-all \
-  openprinting-ppds \
-  hpijs-ppds \
   hp-ppd \
+  hpijs-ppds \
   hplip \
+  openprinting-ppds \
+  printer-driver-all \
   printer-driver-cups-pdf \
+  smbclient \
   sudo \
   whois \
-  smbclient \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/*
 
