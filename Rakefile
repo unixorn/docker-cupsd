@@ -34,3 +34,8 @@ desc 'Lint the Dockerfile'
 task :lint do
   sh %{ docker run --rm -i hadolint/hadolint < Dockerfile }
 end
+
+desc 'Build a quick test image'
+task :test do
+  sh %{ docker build . -t #{CONTAINER_NAME}:test }
+end
