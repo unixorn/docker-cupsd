@@ -2,7 +2,7 @@ FROM debian:buster-slim
 LABEL maintainer="Joe Block <jpb@unixorn.net>"
 LABEL description="Cupsd on top of debian-slim"
 
-# Install Packages (basic tools, cups, basic drivers, HP drivers)
+# Install Packages (basic tools, cups, fonts, HP drivers, laundry list drivers)
 RUN apt-get update \
 && apt-get install -y --no-install-recommends apt-utils ca-certificates \
 && update-ca-certificates \
