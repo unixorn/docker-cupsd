@@ -37,5 +37,5 @@ end
 
 desc 'Build a quick test image'
 task :test do
-  sh %{ docker build . -t #{CONTAINER_NAME}:test }
+  sh %{ docker buildx build --platform linux/amd64 --load -t #{CONTAINER_NAME}:test .}
 end
