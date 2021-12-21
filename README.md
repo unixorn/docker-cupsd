@@ -2,7 +2,7 @@
 
 `cupsd` in a docker container.
 
-Based on buster-slim. Includes [cupsd](https://cups.org) along with every printer driver I could think of.
+Based on bullseye-slim. Includes [cupsd](https://cups.org) along with every printer driver I could think of.
 
 Admin user & passwords default to print/print
 
