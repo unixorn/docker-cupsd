@@ -35,3 +35,5 @@ Mounting `printers.conf` into the container keeps you from losing your printer c
 4. Put the IP (or better, DNS name) of your server in the Address field
 5. Select Internet Printing Protocol in the Protocol dropdown
 6. Put `printers/YOURPRINTERNAME` in the queue field.
+
+Edit - add job retries

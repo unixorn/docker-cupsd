@@ -12,7 +12,7 @@ RUN apt-get update \
   cups-bsd \
   cups-client \
   cups-filters \
-  foomatic-db-compressed-ppds \
+  foomatic-db \
   gsfonts \
   gutenprint-locales \
   hp-ppd \
