@@ -1,4 +1,14 @@
 # docker-cupsd
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Run the server](#run-the-server)
+- [Add printers to server](#add-printers-to-server)
+- [Add the printer to your Mac](#add-the-printer-to-your-mac)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 `cupsd` in a docker container.
 
@@ -35,3 +45,5 @@ Mounting `printers.conf` into the container keeps you from losing your printer c
 4. Put the IP (or better, DNS name) of your server in the Address field
 5. Select Internet Printing Protocol in the Protocol dropdown
 6. Put `printers/YOURPRINTERNAME` in the queue field.
+
+Edit - add job retries
