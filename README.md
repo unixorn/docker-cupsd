@@ -3,10 +3,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [docker-cupsd](#docker-cupsd)
-  - [Run the server](#run-the-server)
-  - [Add printers to server](#add-printers-to-server)
-  - [Add the printer to your Mac](#add-the-printer-to-your-mac)
+- [Run the server](#run-the-server)
+- [Add printers to server](#add-printers-to-server)
+- [Add the printer to your Mac](#add-the-printer-to-your-mac)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
