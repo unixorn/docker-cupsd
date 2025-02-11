@@ -30,6 +30,27 @@ sudo docker run -d --restart unless-stopped \
   unixorn/cupsd
 ```
 
+or use `docker-compose up` with the following `docker-compose.yaml`:
+
+```yaml
+version: '3.9'
+services:
+  cupsd:
+    image: unixorn/cupsd
+    volumes:
+      - './printers.conf:/etc/cups/printers.conf'
+      - '/dev/bus/usb:/dev/bus/usb'
+      - '/var/run/dbus:/var/run/dbus'
+      - /etc/hostname:/etc/hostname:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/machine-id:/etc/machine-id:ro
+      - /etc/timezone:/etc/timezone:ro
+    privileged: true
+    ports:
+      - '631:631'
+    restart: unless-stopped
+```
+
 Mounting `printers.conf` into the container keeps you from losing your printer configuration when you upgrade the container later.
 
 ## Add printers to server
