@@ -5,6 +5,7 @@ task :build => [:multiarch_build]
 task :buildx => [:multiarch_build]
 
 CONTAINER_NAME = 'unixorn/cupsd'
+BASELINE = 'bookworm-slim'
 
 task :usage do
   puts 'Usage:'
@@ -18,21 +19,25 @@ end
 
 desc 'Use buildx to make a multi-arch container without cache'
 task :cacheless do
-  puts "Building #{CONTAINER_NAME}"
+  puts "Building #{CONTAINER_NAME}:#{BASELINE}"
+  sh %{ docker buildx build --no-cache --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME}:#{BASELINE} .}
   sh %{ docker buildx build --no-cache --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME} .}
   sh %{ docker pull #{CONTAINER_NAME} }
+  sh %{ docker pull #{CONTAINER_NAME}#{BASELINE} }
 end
 
 desc 'Use buildx to make a multi-arch container'
 task :multiarch_build do
-  puts "Building #{CONTAINER_NAME}"
+  puts "Building #{CONTAINER_NAME}:#{BASELINE}"
   sh %{ docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME} .}
+  sh %{ docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME}:#{BASELINE} .}
   sh %{ docker pull #{CONTAINER_NAME} }
 end
 
 desc 'Buildx a local multiarch container'
 task :local_multiarch_build do
-  puts "Building #{CONTAINER_NAME}"
+  puts "Building #{CONTAINER_NAME}:#{BASELINE}"
+  sh %{ docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 --load -t #{CONTAINER_NAME}:#{BASELINE} .}
   sh %{ docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 --load -t #{CONTAINER_NAME} .}
 end
 

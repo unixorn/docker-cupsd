@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 LABEL maintainer="Joe Block <jpb@unixorn.net>"
 LABEL description="Cupsd on top of debian-slim"
 

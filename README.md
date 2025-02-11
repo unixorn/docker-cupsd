@@ -12,15 +12,15 @@
 
 `cupsd` in a docker container.
 
-Based on bullseye-slim. Includes [cupsd](https://cups.org) along with every printer driver I could think of.
+Based on debian:bullseye-slim. Includes [cupsd](https://cups.org) along with every printer driver I could think of.
 
-Admin user & passwords default to print/print
+Admin user & passwords default to **print** / **print**
 
 ## Run the server
 
 Start `cupsd` with:
 
-```
+```sh
 sudo docker run -d --restart unless-stopped \
   -p 631:631 \
   --privileged \
@@ -55,16 +55,14 @@ Mounting `printers.conf` into the container keeps you from losing your printer c
 
 ## Add printers to server
 
-1. Connect to `http://hostname:631`
-2. Adminstration -> Printers -> Add Printer
+1. Connect to `http://cupsd-hostname:631`
+2. **Adminstration** -> **Printers** -> **Add Printer**
 
 ## Add the printer to your Mac
 
-1. System Preferences -> Printers
-2. Click on the +
+1. **System Preferences** -> **Printers**
+2. Click on the **+**
 3. Click the center sphere icon
 4. Put the IP (or better, DNS name) of your server in the Address field
-5. Select Internet Printing Protocol in the Protocol dropdown
+5. Select `Internet Printing Protocol` in the Protocol dropdown
 6. Put `printers/YOURPRINTERNAME` in the queue field.
-
-Edit - add job retries
