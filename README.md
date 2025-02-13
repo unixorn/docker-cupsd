@@ -66,3 +66,5 @@ Mounting `printers.conf` into the container keeps you from losing your printer c
 4. Put the IP (or better, DNS name) of your server in the Address field
 5. Select `Internet Printing Protocol` in the Protocol dropdown
 6. Put `printers/YOURPRINTERNAME` in the queue field.
+
+I use this to integrate with [Home Assistant](https://www.home-assistant.io/). I blogged how I use Home Assistant to automagically turn on my HP4050N printer when there are print jobs and turn it back off when the jobs are complete [here](https://unixorn.github.io/post/home-assistant-printer-power-management/), but it'll work with any printer.
