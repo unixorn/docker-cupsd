@@ -6,6 +6,7 @@
 - [Run the server](#run-the-server)
 - [Add printers to server](#add-printers-to-server)
 - [Add the printer to your Mac](#add-the-printer-to-your-mac)
+- [Use with Home Assistant](#use-with-home-assistant)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
